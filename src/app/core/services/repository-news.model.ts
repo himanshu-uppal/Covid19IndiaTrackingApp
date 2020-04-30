@@ -18,6 +18,7 @@ export class Model {
     saveNews(news: News) {
         if (news.id == 0 || news.id == null) {
             news.id = this.generateID();
+            console.log(news);
             this.news.push(news);
         } else {
             let index = this.news

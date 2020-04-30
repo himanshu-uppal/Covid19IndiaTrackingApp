@@ -9,6 +9,10 @@ import { PrecautionsComponent } from './precautions/precautions.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddNewsComponent } from './add-news/add-news.component';
+import {HttpClientModule} from '@angular/common/http';
+import { StateWiseDataComponent } from './state-wise-data/state-wise-data.component';
+import {CovidIndiaDataService} from './core';
+import {StateWiseDataResolver} from './state-wise-data/state-wise-data-resolver.service'
 
 @NgModule({
   declarations: [
@@ -17,12 +21,16 @@ import { AddNewsComponent } from './add-news/add-news.component';
     NewsComponent,
     PrecautionsComponent,
     LoginComponent,
-    AddNewsComponent
+    AddNewsComponent,
+    StateWiseDataComponent
   ],
   imports: [
-    BrowserModule,routing, FormsModule, ReactiveFormsModule]
+    BrowserModule,routing, FormsModule, ReactiveFormsModule,HttpClientModule]
   ,
-  providers: [],
+  providers: [
+    CovidIndiaDataService,
+    StateWiseDataResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,6 +32,7 @@ export class AddNewsComponent implements OnInit {
     this.formSubmitted = true;
     if (form.valid) {
       this.addNews(this.news);
+      this.model.saveNews(this.news);
       this.news = new News();
       form.reset();
       this.formSubmitted = false;

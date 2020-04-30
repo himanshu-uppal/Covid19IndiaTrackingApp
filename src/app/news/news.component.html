@@ -1,1 +1,11 @@
-<p>news works!</p>
+
+<div *ngFor="let news of allNews">
+    <h2>News Heading - {{news.title}}</h2>
+    <div>
+       Description -  {{news.description}} <br />
+      Summary -   {{news.summary}}<br />
+      Image -   {{news.image}}<br />
+      Full News -   {{news.fullNews}}<br />
+       Last updated on -  {{news.lastUpdatedTime | date:'fullDate'}}<br />
+    </div>
+</div>
