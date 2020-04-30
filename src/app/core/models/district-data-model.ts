@@ -1,4 +1,4 @@
-export interface IStateData {
+export interface IDistrictData {
      state?: string,
      stateCode?: string,
      active?: number,
@@ -6,7 +6,9 @@ export interface IStateData {
      deaths?: number,
      recovered?: number,
      lastupdatedtime?:Date,
-     deltaconfirmed?:number,
-     deltadeaths?:number,
-     deltarecovered?:number
+     delta?:{
+      confirmed?: number,
+      deceased?: number,
+      recovered?: number
+     }
    }
