@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsComponent } from './news/news.component';
 import { PrecautionsComponent } from './precautions/precautions.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AddNewsComponent } from './add-news/add-news.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,12 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     NewsComponent,
     PrecautionsComponent,
-    LoginComponent
+    LoginComponent,
+    AddNewsComponent
   ],
   imports: [
-    BrowserModule,routing
-  ],
+    BrowserModule,routing, FormsModule, ReactiveFormsModule]
+  ,
   providers: [],
   bootstrap: [AppComponent]
 })

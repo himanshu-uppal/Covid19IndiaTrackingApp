@@ -1,0 +1,75 @@
+
+
+<div>
+ <h2>Add a News</h2>
+</div>
+<form class="m-2" novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+
+ <div class="bg-danger text-white p-2 mb-2" *ngIf="formSubmitted && form.invalid">
+     There are problems with the form
+     <ul>
+    
+     </ul>
+     </div>
+     <div class="form-group">
+     <label>Title</label>
+     <input class="form-control" name="title" [(ngModel)]="news.title"
+     formControlName="title" />
+     <ul class="text-danger list-unstyled"
+     *ngIf="(formSubmitted || form.controls['title'].dirty) &&
+     form.controls['title'].invalid">
+   
+     </ul>
+     </div>
+
+         <div class="form-group">
+             <label>Description</label>
+             <input class="form-control" name="description" [(ngModel)]="news.description"
+             formControlName="description" />
+             <ul class="text-danger list-unstyled"
+             *ngIf="(formSubmitted || form.controls['description'].dirty) &&
+             form.controls['description'].invalid">
+          
+             </ul>
+             </div>
+
+             <div class="form-group">
+                 <label>Summary</label>
+                 <input class="form-control" name="summary" [(ngModel)]="news.summary"
+                 formControlName="summary" />
+                 <ul class="text-danger list-unstyled"
+                 *ngIf="(formSubmitted || form.controls['summary'].dirty) &&
+                 form.controls['summary'].invalid">
+               
+                 </ul>
+                 </div>
+
+                 <div class="form-group">
+                     <label>Full News</label>
+                     <input class="form-control" name="fullNews" [(ngModel)]="news.fullNews"
+                     formControlName="fullNews"/>
+                     <ul class="text-danger list-unstyled"
+                     *ngIf="(formSubmitted || form.controls['fullNews'].dirty) &&
+                     form.controls['fullNews'].invalid">
+                    
+                     </ul>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Image</label>
+                         <input class="form-control" name="image" [(ngModel)]="news.image"
+                         formControlName="image" />
+                         <ul class="text-danger list-unstyled"
+                         *ngIf="(formSubmitted || form.controls['image'].dirty) &&
+                         form.controls['image'].invalid">
+                       
+                         </ul>
+                         </div>
+     
+    
+     <button class="btn btn-primary" type="submit"
+     [disabled]="formSubmitted && form.invalid"
+     [class.btn-secondary]="formSubmitted && form.invalid">
+     Create
+     </button>
+ </form>
