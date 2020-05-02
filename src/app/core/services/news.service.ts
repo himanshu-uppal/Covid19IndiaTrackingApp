@@ -1,6 +1,9 @@
 import { News } from "../models/news.model";
 import { SampleNewsDataSource } from "./news-sample-source.model";
-export class Model {
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class NewsService {
     private dataSource: SampleNewsDataSource;
     private news: News[];
     private locator = (p: News, id: number) => p.id == id;
@@ -19,7 +22,8 @@ export class Model {
         if (news.id == 0 || news.id == null) {
             news.id = this.generateID();
             console.log(news);
-            this.news.push(news);
+            this.news.unshift(news);
+            console.log('all news' + JSON.stringify(this.news));
         } else {
             let index = this.news
                 .findIndex(p => this.locator(p, news.id));
@@ -41,3 +45,4 @@ export class Model {
         return candidate;
     }
 }
+   

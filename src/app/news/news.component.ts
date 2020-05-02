@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model } from "../core/services/repository-news.model";
+import { NewsService } from "../core/services/news.service";
 import { News } from "../core/models/news.model";
 
 @Component({
@@ -8,19 +8,16 @@ import { News } from "../core/models/news.model";
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  model: Model = new Model();
+ 
   allNews : News[] = [];
 
-  constructor() {
-    
+  constructor(private newsService:NewsService) {    
    }
 
   ngOnInit(): void {
 
-    this.allNews = this.model.getAllNews();
+    this.allNews = this.newsService.getAllNews();
   
-  }
-
-  
+  }  
   
 }

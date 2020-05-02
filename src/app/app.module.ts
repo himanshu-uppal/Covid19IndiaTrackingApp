@@ -12,8 +12,11 @@ import { AddNewsComponent } from './add-news/add-news.component';
 import {HttpClientModule} from '@angular/common/http';
 import { StateWiseDataComponent } from './state-wise-data/state-wise-data.component';
 import {CovidIndiaDataService} from './core';
-import {StateWiseDataResolver} from './state-wise-data/state-wise-data-resolver.service'
-
+import {StateWiseDataResolver} from './state-wise-data/state-wise-data-resolver.service';
+import {AuthenticationService} from './core';
+import {AuthGuard} from './core';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import {NewsService} from './core'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +25,18 @@ import {StateWiseDataResolver} from './state-wise-data/state-wise-data-resolver.
     PrecautionsComponent,
     LoginComponent,
     AddNewsComponent,
-    StateWiseDataComponent
+    StateWiseDataComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,routing, FormsModule, ReactiveFormsModule,HttpClientModule]
   ,
   providers: [
     CovidIndiaDataService,
-    StateWiseDataResolver
+    StateWiseDataResolver,
+    AuthenticationService,
+    AuthGuard,
+    NewsService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Model } from "../core/services/repository-news.model";
+import { NewsService } from "../core/services/news.service";
 import { News } from "../core/models/news.model";
 import { NewsFormGroup } from './news-form.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-news',
@@ -10,11 +11,11 @@ import { NewsFormGroup } from './news-form.model';
 })
 export class AddNewsComponent implements OnInit {
 
-  model: Model = new Model();
+ 
   news: News = new News();
   form: NewsFormGroup = new NewsFormGroup();
 
-  constructor() { }
+  constructor(private router:Router,private newsService:NewsService) { }
 
   ngOnInit(): void {
   }
@@ -32,10 +33,11 @@ export class AddNewsComponent implements OnInit {
     this.formSubmitted = true;
     if (form.valid) {
       this.addNews(this.news);
-      this.model.saveNews(this.news);
+      this.newsService.saveNews(this.news);
       this.news = new News();
       form.reset();
       this.formSubmitted = false;
+      this.router.navigateByUrl("/news");
     }
   }
 
