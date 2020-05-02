@@ -1,9 +1,21 @@
 <p>state-wise-data works!</p>
 
-<div *ngFor="let stateData of stateWiseData" >
+<div *ngFor="let stateData of stateWiseData" (click)="toggleDistrictDetails(stateData.statecode)" >
         {{stateData.state}}
         {{stateData.confirmed}}
         {{stateData.active}}
         {{stateData.deaths}}
-        {{stateData.recovered}}
+        {{stateData.recovered}} <br />       
+        <div *ngIf=stateData.districtData [hidden]="!districtDataVisible.get(stateData.statecode)">
+            <h6>District Wise Details</h6>
+            <div *ngFor="let district of stateData.districtData" >
+                {{district.district}}
+                {{district.confirmed}}
+                {{district.active}}
+                {{district.deaths}}
+                {{district.recovered}}
+
+            </div>
+           
+        </div>
     </div>

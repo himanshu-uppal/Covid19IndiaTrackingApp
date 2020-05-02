@@ -13,7 +13,7 @@
      </div>
      <div class="form-group">
      <label>Title</label>
-     <input class="form-control" name="title" [(ngModel)]="news.title"
+     <input placeholder="Enter title" class="form-control" name="title" [(ngModel)]="news.title"
      formControlName="title" />
      <ul class="text-danger list-unstyled"
      *ngIf="(formSubmitted || form.controls['title'].dirty) &&
@@ -24,7 +24,7 @@
 
          <div class="form-group">
              <label>Description</label>
-             <input class="form-control" name="description" [(ngModel)]="news.description"
+             <input placeholder="Enter description" class="form-control" name="description" [(ngModel)]="news.description"
              formControlName="description" />
              <ul class="text-danger list-unstyled"
              *ngIf="(formSubmitted || form.controls['description'].dirty) &&
@@ -35,7 +35,7 @@
 
              <div class="form-group">
                  <label>Summary</label>
-                 <input class="form-control" name="summary" [(ngModel)]="news.summary"
+                 <input placeholder="Enter summary" class="form-control" name="summary" [(ngModel)]="news.summary"
                  formControlName="summary" />
                  <ul class="text-danger list-unstyled"
                  *ngIf="(formSubmitted || form.controls['summary'].dirty) &&
@@ -46,8 +46,8 @@
 
                  <div class="form-group">
                      <label>Full News</label>
-                     <input class="form-control" name="fullNews" [(ngModel)]="news.fullNews"
-                     formControlName="fullNews"/>
+                     <textarea height="300px" placeholder="Enter full news" class="form-control" name="fullNews" [(ngModel)]="news.fullNews"
+                     formControlName="fullNews"></textarea>
                      <ul class="text-danger list-unstyled"
                      *ngIf="(formSubmitted || form.controls['fullNews'].dirty) &&
                      form.controls['fullNews'].invalid">
@@ -57,7 +57,7 @@
 
                      <div class="form-group">
                          <label>Image</label>
-                         <input class="form-control" name="image" [(ngModel)]="news.image"
+                         <input placeholder="Enter image name" class="form-control" name="image" [(ngModel)]="news.image"
                          formControlName="image" />
                          <ul class="text-danger list-unstyled"
                          *ngIf="(formSubmitted || form.controls['image'].dirty) &&

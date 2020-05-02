@@ -1,6 +1,8 @@
+import { IDistrictData } from './district-data-model';
+
 export interface IStateData {
      state?: string,
-     stateCode?: string,
+     statecode?: string,
      active?: number,
      confirmed?: number,
      deaths?: number,
@@ -8,5 +10,6 @@ export interface IStateData {
      lastupdatedtime?:Date,
      deltaconfirmed?:number,
      deltadeaths?:number,
-     deltarecovered?:number
+     deltarecovered?:number,
+     districtData?: IDistrictData
    }
