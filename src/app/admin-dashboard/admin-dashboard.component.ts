@@ -14,9 +14,9 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout() {
+  logout() {   
     this.authenticationService.clear();
-    this.router.navigateByUrl("/");
+    this.router.navigateByUrl("/");    
     }
 
 }

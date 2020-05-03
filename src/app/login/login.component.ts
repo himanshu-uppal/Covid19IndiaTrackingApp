@@ -21,9 +21,11 @@ export class LoginComponent {
   if(isValidUser) {
     localStorage['isAuthenticated'] = 1;
   this.router.navigateByUrl("/admin/dashboard");
-  }
+  }else {
+    this.errorMessage = "Invalid user details";
+    }
  } else {
- this.errorMessage = "Invalid user details";
+ this.errorMessage = "Invalid form details";
  }
  }
 

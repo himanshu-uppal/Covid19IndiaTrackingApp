@@ -23,7 +23,6 @@ export class NewsService {
             news.id = this.generateID();
             console.log(news);
             this.news.unshift(news);
-            console.log('all news' + JSON.stringify(this.news));
         } else {
             let index = this.news
                 .findIndex(p => this.locator(p, news.id));

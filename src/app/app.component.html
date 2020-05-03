@@ -16,11 +16,11 @@
       <li class="nav-item">
         <a class="nav-link"  routerLink="/precautions">Precautions</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"  routerLink="/admin/dashboard/news">Add News</a>
+      <li class="nav-item" *ngIf="authenticated()">
+        <a class="nav-link"  routerLink="/admin/dashboard">Admin Dashboard</a>
       </li>
     </ul>
-    <span class="navbar-text">
+    <span class="navbar-text" *ngIf="!authenticated()">
       <a class="nav-link" routerLink="/login">Admin Login</a>
     </span>
   </div>
