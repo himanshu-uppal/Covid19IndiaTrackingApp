@@ -12,6 +12,7 @@ export class StateWiseDataComponent implements OnInit {
   stateWiseData :Array<IStateData>;
   districtWiseData : Array<any>;
   districtDataVisible:Map<string,boolean> = new Map<string,boolean>();
+  total:IStateData
 
   constructor(private route:ActivatedRoute){}
 
@@ -20,6 +21,13 @@ export class StateWiseDataComponent implements OnInit {
       let covid19IndiaData = this.route.snapshot.data['covid19IndiaData'];
         this.stateWiseData = covid19IndiaData.statewisedata;
         this.districtWiseData = covid19IndiaData.districtwisedata;
+
+        //remove total details from stateDetails array
+        this.total = this.stateWiseData.find(stateDetails =>{ return stateDetails.statecode === "TT"}) ;
+        const index = this.stateWiseData.indexOf(this.total);
+if (index > -1) {
+  this.stateWiseData .splice(index, 1);
+}
 
         for(let state of this.stateWiseData){
 

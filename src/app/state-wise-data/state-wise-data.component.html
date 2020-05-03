@@ -1,21 +1,53 @@
-<p>state-wise-data works!</p>
 
-<div *ngFor="let stateData of stateWiseData" (click)="toggleDistrictDetails(stateData.statecode)" >
-        {{stateData.state}}
-        {{stateData.confirmed}}
-        {{stateData.active}}
-        {{stateData.deaths}}
-        {{stateData.recovered}} <br />       
-        <div *ngIf=stateData.districtData [hidden]="!districtDataVisible.get(stateData.statecode)">
-            <h6>District Wise Details</h6>
-            <div *ngFor="let district of stateData.districtData" >
-                {{district.district}}
-                {{district.confirmed}}
-                {{district.active}}
-                {{district.deaths}}
-                {{district.recovered}}
 
-            </div>
-           
-        </div>
+   <br />
+    <div class="row font-weight-bold" *ngIf="stateWiseData" >
+        <div class="col"> State/District</div>
+        <div class="col">Confirmed</div>
+        <div class="col">Active</div>
+        <div class="col">Deaths</div>
+        <div class="col">Recovered</div>
     </div>
+    <br />
+    <div class="row">
+        <div class="col"> <h6>{{total.state}}</h6></div>
+        <div class="col font-weight-bold text-info">   <h6>{{total.confirmed}}</h6> </div>
+        <div class="col font-weight-bold text-danger">  <h6> {{total.active}}</h6> </div>
+            <div class="col font-weight-bold text-warning"> <h6>  {{total.deaths}}</h6> </div>
+                <div class="col font-weight-bold text-success"> <h6> {{total.recovered}}</h6> </div>
+       </div>
+       <br />
+   
+<div class="row state" *ngFor="let stateData of stateWiseData" (click)="toggleDistrictDetails(stateData.statecode)" >
+    <div class="col-12">
+        <div class="row">
+            <div class="col font-weight-bold">   {{stateData.state}}</div>
+            <div class="col font-weight-bold text-info">    {{stateData.confirmed}}</div>
+                <div class="col text-danger font-weight-bold">   {{stateData.active}}</div>
+                    <div class="col text-warning font-weight-bold">   {{stateData.deaths}}</div>
+                        <div class="col text-success font-weight-bold">    {{stateData.recovered}} </div> 
+           </div>  </div>
+  
+           <div class="col-12">
+            <div class="row bg-light" *ngFor="let district of stateData.districtData" [hidden]="!districtDataVisible.get(stateData.statecode)">
+              
+               
+                      
+                      
+                            <div class="col font-weight-normal">  {{district.district}}</div>
+                        <div class="col font-weight-normal text-info">  {{district.confirmed}}</div>
+                            <div class="col font-weight-normal text-danger">  {{district.active}}</div>
+                                <div class="col font-weight-normal text-warning">  {{district.deaths}}</div>
+                                    <div class="col font-weight-normal text-success">  {{district.recovered}}</div>
+                                      
+                    
+               
+               
+                        
+             </div>
+           </div>
+        
+    </div>
+    
+   
+

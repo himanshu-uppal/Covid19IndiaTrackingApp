@@ -1,0 +1,7 @@
+.state{
+    padding: 1%;
+    margin: 1%;
+    border-style: dashed;
+    border-color: gainsboro;
+    cursor: pointer;
+}
