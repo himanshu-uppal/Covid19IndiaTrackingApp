@@ -2,7 +2,7 @@ export interface IDistrictData {
   district?: string,
   active?: number,
   confirmed?: number,
-  deaths?: number,
+  deceased?: number,
   recovered?: number,
   lastupdatedtime?: Date,
   delta?: {
