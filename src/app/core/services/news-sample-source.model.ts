@@ -5,10 +5,10 @@ export class SampleNewsDataSource {
         this.data = new Array<News>(
             {
                 id: 1,
-                title: "News 1",
-                description: "News 1",
-                summary: "News 1",
-                fullNews: "News 1",
+                title: "Railways has run 34 Shramik special trains so far from different parts of the country and is fulfilling its social responsibility of providing safe and convenient travel especially to the poorest of the poor in a time of crisis",
+                description: "",
+                summary: "",
+                fullNews: "The BJP said on Monday the railways has subsidised 85 per cent of ticket fare for special trains being run to transport migrant workers and the state government has to pay the remaining 15 per cent, soon after the Congress attacked the central government over the issue.               The state government concerned can also pay for the tickets, BJP spokesperson Sambit Patra said.",
                 image: "News 1",
                 lastUpdatedTime: new Date()
             },

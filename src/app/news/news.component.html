@@ -1,15 +1,14 @@
 <br />
 <h4>Important Updates</h4>
 <br />
-<div  *ngFor="let news of allNews">
-<div class="row news" >
-    <div class="col-6"><h2>News Heading - {{news.title}}</h2></div>
-    <div class="col-6"> Description -  {{news.description}}</div>
+<div class="news"  *ngFor="let news of allNews">
+<div class="row">
+    <div class="col-12"><h6>{{news.title}}</h6></div>   
 </div>
-    <div class="row">     
-      Image -   {{news.image}} </div>
-      <div class="row">
-      Full News -   {{news.fullNews}}
+    <div class="row news-image-area">     
+      {{news.image}} </div>
+      <div class="row news-content">
+      {{news.fullNews}}
       </div>
       <br/>
       <div class="row">

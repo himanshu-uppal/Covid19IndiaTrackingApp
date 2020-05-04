@@ -1,5 +1,14 @@
 .news{
-    padding : 1%;
-    margin: 1%;
+    padding : 2%;
+    margin: 2%;
+    border-style: dotted;
+    border-color: antiquewhite;
     
+}
+
+.news-content{
+    color: gray;
+}
+.news-image-area{
+    text-align: center;
 }
