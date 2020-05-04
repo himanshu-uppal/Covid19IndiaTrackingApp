@@ -1,11 +1,19 @@
-
-<div *ngFor="let news of allNews">
-    <h2>News Heading - {{news.title}}</h2>
-    <div>
-       Description -  {{news.description}} <br />
-      Summary -   {{news.summary}}<br />
-      Image -   {{news.image}}<br />
-      Full News -   {{news.fullNews}}<br />
-       Last updated on -  {{news.lastUpdatedTime | date:'fullDate'}}<br />
+<br />
+<h4>Important Updates</h4>
+<br />
+<div  *ngFor="let news of allNews">
+<div class="row news" >
+    <div class="col-6"><h2>News Heading - {{news.title}}</h2></div>
+    <div class="col-6"> Description -  {{news.description}}</div>
+</div>
+    <div class="row">     
+      Image -   {{news.image}} </div>
+      <div class="row">
+      Full News -   {{news.fullNews}}
+      </div>
+      <br/>
+      <div class="row">
+       Last updated on -  {{news.lastUpdatedTime | date:'fullDate'}}
     </div>
 </div>
+
